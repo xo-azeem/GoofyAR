@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "GoofyAR",
+    "slug": "goofyar",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "goofyar",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0A0A0C",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A0A0C"
+    },
+    "ios": {
+      "bundleIdentifier": "com.goofyar.app",
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSCameraUsageDescription": "GoofyAR uses the camera to place 3D models in your space.",
+        "UIRequiredDeviceCapabilities": ["arkit", "arm64"],
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.goofyar.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#0A0A0C",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE"
+      ],
+      "predictiveBackGestureEnabled": false
+    },
+    "plugins": [
+      [
+        "@reactvision/react-viro",
+        {
+          "provider": "none",
+          "android": { "xRMode": ["AR"] },
+          "ios": {
+            "cameraUsagePermission": "GoofyAR uses the camera to place 3D models in your space."
+          }
+        }
+      ],
+      "expo-document-picker"
+    ]
+  }
+}
